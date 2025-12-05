@@ -1391,9 +1391,9 @@ td span[class^="cell-bg-"] {
 
 
 .bg-icon{
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
     background: white;
     border-radius: 20px;
-    padding: 4px;
+    padding: 5px;
 }
