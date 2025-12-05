@@ -1388,3 +1388,11 @@ td span[class^="cell-bg-"] {
   color: var(--color-primary);
   font-weight: 300; /* ketebalan */
 }
+
+
+.bg-icon{
+  height:28px;
+  width:28px;
+  border-radius:50%;
+  background:white;
+}
