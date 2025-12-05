@@ -293,42 +293,63 @@ body {
   gap: 30px;
   flex-wrap: wrap;
 }
-
 .application-card {
-  width: 325px;
-  background-color: var(--color-white);
+  position: relative;
+  width: 320px;
   border-radius: 8px;
-  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
-  text-align: center;
   overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .application-card-image-wrapper {
-  height: 233px;
+  height: 320px;
   overflow: hidden;
 }
 
 .application-card-image-wrapper img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
 }
 
 .application-card-text {
-  padding: 30px 20px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 20px;
+  text-align: center;
+  max-height: 70px;
+  overflow: hidden;
+  transition: all 0.65s ease;
 }
 
 .application-card-text h3 {
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 30px;
-  margin: 0 0 5px 0;
+  margin: 0;
+  font-size: 18px;
+  transition: all 0.65s ease;
 }
 
 .application-card-text p {
-  font-size: 16px;
-  line-height: 24px;
-  margin: 0;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.65s ease;
+}
+
+.application-card:hover .application-card-text {
+  max-height: 180px;
+  padding-bottom: 15px;
+}
+
+.application-card:hover h3 {
+  color: var(--color-primary);
+  font-size: 18px;
+}
+
+.application-card:hover p {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @media (max-width: 1200px) {
@@ -1099,9 +1120,6 @@ td span[class^="cell-bg-"] {
   text-align: center;
   color: var(--color-white);
   background-color: var(--color-primary);
-  /* Fallback */
-  background-image: url(...);
-  /* This should be a background image */
   border-radius: 8px;
 }
 
@@ -1113,6 +1131,7 @@ td span[class^="cell-bg-"] {
   color: var(--color-white);
   max-width: 1028px;
   margin: 0 auto;
+  padding: 20px;
 }
 
 .other-products-grid {
@@ -1129,6 +1148,7 @@ td span[class^="cell-bg-"] {
   position: relative;
   height: 320px;
   border-radius: 20px;
+  padding: 14px;
 }
 
 .product-image {
@@ -1365,6 +1385,8 @@ td span[class^="cell-bg-"] {
 }
 .other-product-card:hover .product-arrow {
   display: block;
+  font-size: 12px;
+  line-height: 4px;
 }
 
 /* View Button */
@@ -1389,11 +1411,10 @@ td span[class^="cell-bg-"] {
   font-weight: 300; /* ketebalan */
 }
 
-
-.bg-icon{
-    width: 30px;
-    height: 30px;
-    background: white;
-    border-radius: 20px;
-    padding: 5px;
+.bg-icon {
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 20px;
+  padding: 5px;
 }
