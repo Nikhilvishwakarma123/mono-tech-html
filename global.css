@@ -665,6 +665,9 @@ body {
   height: 289px;
   opacity: 0.08;
 }
+.why-card-bg:hover {
+  background-color: #ffe8ee;
+}
 
 @media (max-width: 1300px) {
   .why-choose-grid {
