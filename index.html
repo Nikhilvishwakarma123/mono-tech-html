@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="global.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.8/typed.min.js"></script>
     <script src="global.js" defer></script>
+     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 
 <body>
@@ -53,6 +54,7 @@
             </div>
         </div>
     </header>
+   
     <section id="hero" class="hero-section">
         <div class="container hero-container">
             <div class="hero-content">
@@ -60,67 +62,116 @@
                     <h1 class="hero-title" id="typed"></h1>
                 </div>
                 <div class="hero-description">
-                    <p class="hero-tag">C-Type Hydraulic Press</p>
-                    <p class="hero-text">The C-Type Hydraulic Press offers strength, precision, and easy accessibility
-                        with its open-front C-frame design. Built for durability and stability, it ensures minimal
-                        deflection under heavy loads. Perfect for metal forming, punching, forging, and other industrial
-                        applications.</p>
+                    <p class="hero-tag text-dark">Sheet Straightening Machine</p>
+                    <p class="hero-text text-dark">Monotech Engineers Pvt Ltd presents high-performance Sheet
+                        Straightening Machines, designed for precise, uniform, and smooth sheet straightening across
+                        various industries. Built with cutting-edge technology and a rugged construction, our machines
+                        ensure accuracy, durability, and operational ease.</p>
+                </div>
+            </div>
+
+            <!-- 3d Image Viewer -->
+            <h2 class="applications-title" style="margin-bottom:30px;">3d Images of
+                <span class="highlight">Sheet Straightening Machine</span>
+            </h2>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div style="position:relative;">
+                        <model-viewer src="{{ asset('assets/glb/Machine3_CNC.glb') }}"
+                            style="width:100%; height:500px; margin-bottom:50px;">
+                        </model-viewer>
+                        <a style="position:absolute;top:50%;left:50%;width:100px;cursor:pointer;padding:8px 12px;transform:translate(-50%, -50%);"
+                            class="text-center rounded bg-white text-dark"
+                            onclick="model3dViewer('{{ asset('assets/glb/Machine3_CNC.glb') }}')">View 360</a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div style="position:relative;">
+                        <model-viewer src="{{ asset('assets/glb/Machine2_Roller.glb') }}"
+                            style="width:100%; height:500px; margin-bottom:50px;">
+                        </model-viewer>
+                        <a style="position:absolute;top:50%;left:50%;width:100px;cursor:pointer;padding:8px 12px;transform:translate(-50%, -50%);"
+                            class="text-center rounded bg-white text-dark"
+                            onclick="model3dViewer('{{ asset('assets/glb/Machine2_Roller.glb') }}')">View 360</a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div style="position:relative;">
+                        <model-viewer src="{{ asset('assets/glb/Machine1_Straightening.glb') }}"
+                            style="width:100%; height:500px; margin-bottom:50px;">
+                        </model-viewer>
+                        <a style="position:absolute;top:50%;left:50%;width:100px;cursor:pointer;padding:8px 12px;transform:translate(-50%, -50%);"
+                            class="text-center rounded bg-white text-dark"
+                            onclick="model3dViewer('{{ asset('assets/glb/Machine1_Straightening.glb') }}')">View 360</a>
+                    </div>
                 </div>
             </div>
             <div class="application-cards-container">
-                <h2 class="applications-title">Applications of Our <span class="highlight">C Type Hydraulic Press</span>
+                <h2 class="applications-title">Exceptional Operational Benefits of
+                    <span class="highlight">Sheet Straightening Machine</span>
                 </h2>
                 <div class="application-cards-grid">
-
                     <article class="application-card">
                         <div class="application-card-image-wrapper">
-                            <img src="/mono-tech-html/image/1d64ddad5ffd911f3cbc4fd39afb3e3ac16a1dad.png"
+                            <img src="{{ asset('assets/product/image/1d64ddad5ffd911f3cbc4fd39afb3e3ac16a1dad.png') }}"
                                 alt="Powder Compacting Application">
                         </div>
                         <div class="application-card-text">
-                            <h3>Powder Compacting</h3>
-                            <p>Uniform pressure for high-density, precision-formed parts.</p>
+                            <h3>High Straightening Accuracy</h3>
+                            <p class="text-dark">Eliminates sheet waviness and improves flatness tolerance.</p>
                         </div>
                     </article>
+
                     <article class="application-card">
                         <div class="application-card-image-wrapper">
-                            <img src="/mono-tech-html/image/1d64ddad5ffd911f3cbc4fd39afb3e3ac16a1dad.png" alt="Another Application">
+                            <img src="{{ asset('assets/product/image/1d64ddad5ffd911f3cbc4fd39afb3e3ac16a1dad.png') }}"
+                                alt="Another Application">
                         </div>
                         <div class="application-card-text">
-                            <h3>Powder Compacting</h3>
-                            <p>Uniform pressure for high-density, precision-formed parts.</p>
+                            <h3>User-Friendly Control Panel</h3>
+                            <p class="text-dark">Allows easy operation with minimal manual effort.</p>
                         </div>
                     </article>
+
                     <article class="application-card">
                         <div class="application-card-image-wrapper">
-                            <img src="/mono-tech-html/image/1d64ddad5ffd911f3cbc4fd39afb3e3ac16a1dad.png" alt="Third Application">
+                            <img src="{{ asset('assets/product/image/1d64ddad5ffd911f3cbc4fd39afb3e3ac16a1dad.png') }}"
+                                alt="Third Application">
                         </div>
                         <div class="application-card-text">
-                            <h3>Powder Compacting</h3>
-                            <p>Uniform pressure for high-density, precision-formed parts.</p>
+                            <h3>Energy-Efficient Operation</h3>
+                            <p class="text-dark">Optimized power consumption without compromising performance.</p>
                         </div>
                     </article>
                 </div>
             </div>
         </div>
     </section>
-    <section id="stats" class="stats-section">
+
+    <section id="stats" class="stats-section pb-0">
         <div class="container stats-container">
-            <h2 class="stats-title">Why Choose Monotech’s <span class="highlight">NC Shearing Machine?</span></h2>
-            <div class="stats-grid">
+            <h2 class="stats-title">Why Choose Monotech’s <span class="highlight">Sheet Straightening Machine</span>
+            </h2>
+            <div class="stats-grid mb-5">
                 <div class="stat-item">
-                    <p class="stat-number">33+</p>
-                    <p class="stat-label">Years of Experience</p>
+                    <p class="stat-number text-dark">33+</p>
+                    <p class="stat-label text-dark">Years of Experience</p>
                 </div>
                 <div class="stat-item">
-                    <p class="stat-number">9000+</p>
-                    <p class="stat-label">Machines Worldwide</p>
+                    <p class="stat-number text-dark">9000+</p>
+                    <p class="stat-label text-dark">Machines Worldwide</p>
                 </div>
                 <div class="stat-item">
-                    <p class="stat-number">100%</p>
-                    <p class="stat-label">Quality Certified</p>
+                    <p class="stat-number text-dark">100%</p>
+                    <p class="stat-label text-dark">Quality Certified</p>
                 </div>
             </div>
+        </div>
+    </section>
+    <hr>
+
+    <section style="position: sticky;top:70px;background:white;z-index:6;box-shadow: 1px 3px 4px 0 #adadad33;">
+        <div class="container">
             <nav class="sub-nav">
                 <a href="#" class="sub-nav-item">Machine</a>
                 <a href="#" class="sub-nav-item">Design</a>
@@ -131,64 +182,78 @@
             </nav>
         </div>
     </section>
+
     <section id="features" class="features-section">
         <div class="container features-container">
             <div class="features-content">
-                <h2 class="section-title">Silent Features</h2>
+                <h2 class="section-title text-white">Silent Features</h2>
                 <ul class="features-list">
                     <li class="feature-item">
-                        <img src="/mono-tech-html/image/651_1890.png" alt="check icon" class="bg-icon">
-                        <span>A high-performance hydraulic system to deliver consistent pressure</span>
+                        <img src="{{ asset('assets/product/image/651_1890.png') }}" alt="check icon" class="bg-icon">
+                        <span>Fabricated from high-quality steel, ensuring stability and minimal deflection.</span>
                     </li>
                     <li class="feature-item">
-                        <img src="/mono-tech-html/image/651_1890.png" alt="check icon" class="bg-icon">
-                        <span>High-Performance Hydraulic System for Smooth and Reliable Operation</span>
+                        <img src="{{ asset('assets/product/image/651_1890.png') }}" alt="check icon"
+                            class="bg-icon">
+                        <span>Crafted from Special Alloy steel, our rolls are induction hardened for extended durability
+                            and superior straightening performance.</span>
                     </li>
                     <li class="feature-item">
-                        <img src="/mono-tech-html/image/651_1890.png" alt="check icon" class="bg-icon">
-                        <span>Fast Approach and Return Speeds for Enhanced Productivity</span>
+                        <img src="{{ asset('assets/product/image/651_1890.png') }}" alt="check icon"
+                            class="bg-icon">
+                        <span>Advanced self-aligning bearings enhance smooth and vibration-free movement.</span>
                     </li>
                     <li class="feature-item">
-                        <img src="/mono-tech-html/image/651_1890.png" alt="check icon" class="bg-icon">
-                        <span>Adjustable Stroke and Pressure for Diverse Metalworking Applications</span>
+                        <img src="{{ asset('assets/product/image/651_1890.png') }}" alt="check icon"
+                            class="bg-icon">
+                        <span>Optimized for enhanced straightening accuracy.</span>
                     </li>
                     <li class="feature-item">
-                        <img src="/mono-tech-html/image/651_1890.png" alt="check icon" class="bg-icon">
-                        <span>User-Friendly Controls with Emergency Stop and Safety Switches</span>
+                        <img src="{{ asset('assets/product/image/651_1890.png') }}" alt="check icon"
+                            class="bg-icon">
+                        <span>Allows fine-tuning for different sheet thicknesses, ensuring versatile
+                            applications.</span>
                     </li>
                     <li class="feature-item">
-                        <img src="/mono-tech-html/image/651_1890.png" alt="check icon" class="bg-icon">
-                        <span>Precision-Ground Bed Surface for Accurate and Stable Pressing</span>
+                        <img src="{{ asset('assets/product/image/651_1890.png') }}" alt="check icon"
+                            class="bg-icon">
+                        <span>Optimized for enhanced straightening accuracy.</span>
                     </li>
                     <li class="feature-item">
-                        <img src="/mono-tech-html/image/651_1890.png" alt="check icon" class="bg-icon">
-                        <span>Compact Structure with Open-Front Access for Easy Work Handling</span>
+                        <img src="{{ asset('assets/product/image/651_1890.png') }}" alt="check icon"
+                            class="bg-icon">
+                        <span>Ensures precise adjustments.</span>
                     </li>
                     <li class="feature-item">
-                        <img src="/mono-tech-html/image/651_1890.png" alt="check icon" class="bg-icon">
-                        <span>Optional PLC and HMI for Automated and Intelligent Operations</span>
+                        <img src="{{ asset('assets/product/image/651_1890.png') }}" alt="check icon"
+                            class="bg-icon">
+                        <span>Guarantees smooth power transmission & Delivers high torque transmission with
+                            energy-efficient operations.</span>
                     </li>
                     <li class="feature-item">
-                        <img src="/mono-tech-html/image/651_1890.png" alt="check icon" class="bg-icon">
-                        <span>Integrated Safety Features to Ensure Operator Protection</span>
+                        <img src="{{ asset('assets/product/image/651_1890.png') }}" alt="check icon"
+                            class="bg-icon">
+                        <span>Delivers consistent operation.</span>
                     </li>
                     <li class="feature-item">
-                        <img src="/mono-tech-html/image/651_1890.png" alt="check icon" class="bg-icon">
-                        <span>Custom-Built Options to Meet Specific Industrial Requirements</span>
+                        <img src="{{ asset('assets/product/image/651_1890.png') }}" alt="check icon"
+                            class="bg-icon">
+                        <span>Simplifies machine operation.</span>
                     </li>
                 </ul>
             </div>
             <div class="features-image-wrapper">
                 <!--merged image-->
-                <img src="/mono-tech-html/image/1e6e1e20b5101d52600edb6d2262cafe7aac90f9.png" alt="C-Type Hydraulic Press Machine"
-                    class="feature-image-main">
+                <img src="{{ asset('assets/product/image/1e6e1e20b5101d52600edb6d2262cafe7aac90f9.png') }}"
+                    alt="C-Type Hydraulic Press Machine" class="feature-image-main">
             </div>
         </div>
     </section>
+
     <section id="why-choose" class="why-choose-section">
         <div class="container">
             <div class="why-choose-header py-4">
-                <p class="why-choose-tagline py-3">C-Type Hydraulic Press Requirements</p>
+                <p class="why-choose-tagline py-3 text-dark">C-Type Hydraulic Press Requirements</p>
                 <h2 class="section-title">Why Monotech Engineers is the Right Choice</h2>
                 <p class="section-subtitle">With over 30 years of expertise, Monotech Engineers Pvt Ltd delivers
                     precision-built C-Type Hydraulic Presses designed for efficiency and versatility. Our wide-throat,
@@ -199,52 +264,57 @@
                 <article class="why-card why-card-bg">
                     <div class="why-card-icon-wrapper">
                         <!--merged image-->
-                        <img src="/mono-tech-html/image/widget-bg.png" alt="" class="why-card-icon-bg">
-                        <img src="/mono-tech-html/image/widget.png" alt="Precision Icon" class="why-card-icon-fg">
+                        <img src="{{ asset('assets/product/image/widget-bg.png') }}" alt=""
+                            class="why-card-icon-bg">
+                        <img src="{{ asset('assets/product/image/widget.png') }}" alt="Precision Icon"
+                            class="why-card-icon-fg">
                     </div>
-                    <h3>Consistant Performance</h3>
-                    <p>Consistent performance reflects reliability, dedication, and the ability to deliver quality
-                        results every time.</p>
+                    <h3>High Accuracy & Repeatability</h3>
+                    <p class="text-dark">Advanced design ensures consistent results.</p>
                 </article>
                 <article class="why-card why-card-bg">
                     <div class="why-card-icon-wrapper">
                         <!--merged image-->
-                        <img src="/mono-tech-html/image/widget-bg.png" alt="" class="why-card-icon-bg">
-                        <img src="/mono-tech-html/image/widget.png" alt="Precision Icon" class="why-card-icon-fg">
+                        <img src="{{ asset('assets/product/image/widget-bg.png') }}" alt=""
+                            class="why-card-icon-bg">
+                        <img src="{{ asset('assets/product/image/widget.png') }}" alt="Precision Icon"
+                            class="why-card-icon-fg">
                     </div>
-                    <h3>Consistant Performance</h3>
-                    <p>Consistent performance reflects reliability, dedication, and the ability to deliver quality
-                        results every time.</p>
+                    <h3>Energy-Efficient Design</h3>
+                    <p class="text-dark">Optimized to minimize power consumption.</p>
                 </article>
                 <article class="why-card why-card-large why-card-bg">
                     <div class="why-card-icon-wrapper">
                         <!--merged image-->
-                        <img src="/mono-tech-html/image/widget-bg.png" alt="" class="why-card-icon-bg">
-                        <img src="/mono-tech-html/image/widget.png" alt="Precision Icon" class="why-card-icon-fg">
+                        <img src="{{ asset('assets/product/image/widget-bg.png') }}" alt=""
+                            class="why-card-icon-bg">
+                        <img src="{{ asset('assets/product/image/widget.png') }}" alt="Precision Icon"
+                            class="why-card-icon-fg">
                     </div>
-                    <h3>Consistant Performance</h3>
-                    <p>Consistent performance reflects reliability, dedication, and the ability to deliver quality
-                        results every time.</p>
+                    <h3>Minimal Maintenance</h3>
+                    <p class="text-dark">Durable components reduce downtime.</p>
                 </article>
                 <article class="why-card why-card-highlight ">
                     <div class="why-card-icon-wrapper">
                         <!--merged image-->
-                        <img src="/mono-tech-html/image/widget-bg.png" alt="" class="why-card-icon-bg">
-                        <img src="/mono-tech-html/image/widget.png" alt="Precision Icon" class="why-card-icon-fg">
+                        <img src="{{ asset('assets/product/image/widget-bg.png') }}" alt=""
+                            class="why-card-icon-bg">
+                        <img src="{{ asset('assets/product/image/widget.png') }}" alt="Precision Icon"
+                            class="why-card-icon-fg">
                     </div>
-                    <h3>Consistant Performance</h3>
-                    <p>Consistent performance reflects reliability, dedication, and the ability to deliver quality
-                        results every time.</p>
-                    <img src="/mono-tech-html/image/b0c3acf3aa4f956325b22f6d7ae0fab3cb89165a.png" alt="Machine overlay"
+                    <h3>Enhanced Productivity </h3>
+                    <p>Faster cycle times lead to increased output</p>
+                    <img src="/image/b0c3acf3aa4f956325b22f6d7ae0fab3cb89165a.png" alt="Machine overlay"
                         class="why-card-overlay-img">
                 </article>
             </div>
         </div>
     </section>
+
     <section id="partner" class="partner-section">
         <div class="container partner-container">
             <div class="partner-title-wrapper">
-                <h2 class="section-title sticky-top">
+                <h2 class="section-title sticky-top text-white" style="top: 200px;">
                     <span class="highlight">Why</span> Partner with Us?
                 </h2>
             </div>
@@ -288,11 +358,13 @@
             </div>
         </div>
     </section>
+
     <section id="product-range" class="product-range-section">
         <div class="container">
             <div class="product-range-header">
                 <h2 class="section-title">Product <span class="highlight">Range</span></h2>
-                <p class="section-subtitle">Explore our comprehensive range of hydraulic machines designed for
+                <p class="section-subtitle text-dark">Explore our comprehensive range of hydraulic machines designed
+                    for
                     precision, durability, and unmatched performance.</p>
             </div>
             <div class="table-wrapper">
@@ -389,6 +461,7 @@
             </div>
         </div>
     </section>
+
     <section id="key-features" class="key-features-section">
         <div class="container">
             <h2 class="section-title">
@@ -397,49 +470,38 @@
             <div class="key-features-grid">
                 <article class="key-feature-item">
                     <span class="feature-number">01</span>
-                    <h3>Built for Strength: Rugged C-Frame Design</h3>
-                    <p>Our C-type hydraulic press features a robust, stress-relieved steel frame that offers unmatched
-                        durability and strength. Its sturdy design ensures minimal deflection under load, providing
-                        superior stability and long-lasting performance in demanding operations</p>
+                    <h3>Driven Bottom Rolls</h3>
+                    <p class="text-dark">Provides uniform pressure distribution</p>
                 </article>
                 <article class="key-feature-item">
                     <span class="feature-number">02</span>
-                    <h3>Built for Strength: Rugged C-Frame Design</h3>
-                    <p>Our C-type hydraulic press features a robust, stress-relieved steel frame that offers unmatched
-                        durability and strength. Its sturdy design ensures minimal deflection under load, providing
-                        superior stability and long-lasting performance in demanding operations</p>
+                    <h3>Heavy-Duty Bearings & Gun Metal Bushes</h3>
+                    <p class="text-dark">Enhances durability</p>
                 </article>
                 <article class="key-feature-item">
                     <span class="feature-number">03</span>
-                    <h3>Built for Strength: Rugged C-Frame Design</h3>
-                    <p>Our C-type hydraulic press features a robust, stress-relieved steel frame that offers unmatched
-                        durability and strength. Its sturdy design ensures minimal deflection under load, providing
-                        superior stability and long-lasting performance in demanding operations</p>
+                    <h3>Precision Scales for Roller Positioning</h3>
+                    <p class="text-dark">Maintains parallelism between top and bottom rolls</p>
                 </article>
                 <article class="key-feature-item">
                     <span class="feature-number">04</span>
-                    <h3>Built for Strength: Rugged C-Frame Design</h3>
-                    <p>Our C-type hydraulic press features a robust, stress-relieved steel frame that offers unmatched
-                        durability and strength. Its sturdy design ensures minimal deflection under load, providing
-                        superior stability and long-lasting performance in demanding operations</p>
+                    <h3>Single-Person Operation</h3>
+                    <p class="text-dark">Simplifies usability</p>
                 </article>
                 <article class="key-feature-item">
                     <span class="feature-number">05</span>
-                    <h3>Built for Strength: Rugged C-Frame Design</h3>
-                    <p>Our C-type hydraulic press features a robust, stress-relieved steel frame that offers unmatched
-                        durability and strength. Its sturdy design ensures minimal deflection under load, providing
-                        superior stability and long-lasting performance in demanding operations</p>
+                    <h3>Centralized Lubrication System</h3>
+                    <p class="text-dark">Reduces friction and wear</p>
                 </article>
                 <article class="key-feature-item">
                     <span class="feature-number">06</span>
-                    <h3>Built for Strength: Rugged C-Frame Design</h3>
-                    <p>Our C-type hydraulic press features a robust, stress-relieved steel frame that offers unmatched
-                        durability and strength. Its sturdy design ensures minimal deflection under load, providing
-                        superior stability and long-lasting performance in demanding operations</p>
+                    <h3>Heavy-Duty Power Screws for Top Roll Positioning</h3>
+                    <p class="text-dark">Ensures stability and accuracy</p>
                 </article>
             </div>
         </div>
     </section>
+
     <section id="cta" class="cta-section">
         <div class="container cta-container">
             <div class="cta-header">
@@ -448,35 +510,38 @@
                     <span class="cta-tag">Get Started Today</span>
                     <hr class="cta-line">
                 </div>
-                <h2 class="cta-title">Want to Know More ?</h2>
-                <p class="cta-subtitle">Discover how Our Precision engineered C- Type Hydraulic Presses Can transform
+                <h2 class="cta-title fs-1" style="color: var(--color-primary);">Want to Know More ?</h2>
+                <p class="cta-subtitle text-dark">Discover how Our Precision engineered C- Type Hydraulic Presses Can
+                    transform
                     your manufacturing process. Download our detailed brochure or request personalized information from
                     our expert team</p>
             </div>
             <div class="cta-buttons">
                 <a href="#" class="cta-btn cta-btn-primary">
-                    <img src="/mono-tech-html/image/651_1487.svg" alt="">
+                    <img src="/image/651_1487.svg" alt="">
                     Download Our Brochure
                 </a>
                 <a href="#" class="cta-btn cta-btn-secondary">
-                    <img src="/mono-tech-html/image/651_1483.svg" alt="">
+                    <img src="/image/651_1483.svg" alt="">
                     Request Information
                 </a>
             </div>
         </div>
     </section>
+
     <section id="faq" class="faq-section">
         <div class="container faq-container">
             <div class="faq-header">
                 <div class="faq-tag">FAQ</div>
-                <h2 class="section-title">Frequently Asked Questions</h2>
+                <h2 class="section-title text-center">Frequently Asked Questions</h2>
                 <p class="section-subtitle">Got questions? We’ve got answers.</p>
             </div>
             <div class="faq-accordion">
                 <details class="faq-item" open>
                     <summary>
                         What is an NC Shearing Machine and how does it work?
-                        <img src="/mono-tech-html/image/651_1784.svg" alt="toggle icon" class="toggle-icon">
+                        <img src="{{ asset('assets/product/image/arrow-down-icon.png') }}" alt="toggle icon"
+                            class="toggle-icon">
                     </summary>
                     <p>An NC (Numerically Controlled) Shearing Machine is a programmable sheet metal cutting machine
                         that uses a controller to automate cutting dimensions, rake angle, and stroke count. Operators
@@ -486,101 +551,172 @@
                 <details class="faq-item">
                     <summary>
                         What is an NC Shearing Machine and how does it work?
-                        <img src="/mono-tech-html/image/651_1790.svg" alt="toggle icon" class="toggle-icon">
+                        <img src="{{ asset('assets/product/image/arrow-down-icon.png') }}" alt="toggle icon"
+                            class="toggle-icon">
                     </summary>
                     <p>Content for the second question.</p>
                 </details>
                 <details class="faq-item">
                     <summary>
                         What is an NC Shearing Machine and how does it work?
-                        <img src="/mono-tech-html/image/651_1796.svg" alt="toggle icon" class="toggle-icon">
+                        <img src="{{ asset('assets/product/image/arrow-down-icon.png') }}" alt="toggle icon"
+                            class="toggle-icon">
                     </summary>
                     <p>Content for the third question.</p>
                 </details>
                 <details class="faq-item">
                     <summary>
                         What is an NC Shearing Machine and how does it work?
-                        <img src="/mono-tech-html/image/651_1802.svg" alt="toggle icon" class="toggle-icon">
+                        <img src="{{ asset('assets/product/image/arrow-down-icon.png') }}" alt="toggle icon"
+                            class="toggle-icon">
                     </summary>
                     <p>Content for the fourth question.</p>
                 </details>
             </div>
         </div>
     </section>
+
     <section id="trusted-by" class="trusted-by-section">
         <div class="container trusted-by-container">
             <h2 class="trusted-by-title">Trusted By Top Companies</h2>
             <div class="logo-carousel py-4">
                 <div class="logo-track">
                     <!-- Merged image -->
-                    <div class="logo-item"><img src="/mono-tech-html/image/client-1.png" alt="Client logo 1"></div>
+                    <div class="logo-item">
+                        <img src="{{ asset('assets/product/image/client-1.png') }}" alt="Client logo 1">
+                    </div>
                     <!-- Merged image -->
-                    <div class="logo-item"><img src="/mono-tech-html/image/client-2.png" alt="Client logo 2"></div>
+                    <div class="logo-item">
+                        <img src="{{ asset('assets/product/image/client-2.png') }}" alt="Client logo 2">
+                    </div>
                     <!-- Merged image -->
-                    <div class="logo-item"><img src="/mono-tech-html/image/client-3.png" alt="Client logo 3"></div>
+                    <div class="logo-item">
+                        <img src="{{ asset('assets/product/image/client-3.png') }}" alt="Client logo 3">
+                    </div>
                     <!-- Merged image -->
-                    <div class="logo-item"><img src="/mono-tech-html/image/client-4.png" alt="Client logo 4"></div>
+                    <div class="logo-item">
+                        <img src="{{ asset('assets/product/image/client-4.png') }}" alt="Client logo 4">
+                    </div>
                     <!-- Merged image -->
-                    <div class="logo-item"><img src="/mono-tech-html/image/client-5.png" alt="Client logo 5"></div>
+                    <div class="logo-item">
+                        <img src="{{ asset('assets/product/image/client-5.png') }}" alt="Client logo 5">
+                    </div>
                     <!-- Merged image -->
-                    <div class="logo-item"><img src="/mono-tech-html/image/client-6.png" alt="Client logo 6"></div>
+                    <div class="logo-item">
+                        <img src="{{ asset('assets/product/image/client-6.png') }}" alt="Client logo 6">
+                    </div>
                     <!-- Merged image -->
-                    <div class="logo-item"><img src="/mono-tech-html/image/client-7.png" alt="Client logo 7"></div>
-                    <div class="logo-item"><img src="/mono-tech-html/image/client-8.png" alt="Client logo 7"></div>
+                    <div class="logo-item">
+                        <img src="{{ asset('assets/product/image/client-7.png') }}" alt="Client logo 7">
+                    </div>
+
+                    <div class="logo-item">
+                        <img src="{{ asset('assets/product/image/client-8.png') }}" alt="Client logo 7">
+                    </div>
                     <!-- Duplicated for seamless scroll -->
-                    <div class="logo-item"><img src="/mono-tech-html/image/client-1.png" alt="Client logo 1"></div>
-                    <div class="logo-item"><img src="/mono-tech-html/image/client-2.png" alt="Client logo 2"></div>
-                    <div class="logo-item"><img src="/mono-tech-html/image/client-3.png" alt="Client logo 3"></div>
-                    <div class="logo-item"><img src="/mono-tech-html/image/client-4.png" alt="Client logo 4"></div>
-                    <div class="logo-item"><img src="/mono-tech-html/image/client-5.png" alt="Client logo 5"></div>
-                    <div class="logo-item"><img src="/mono-tech-html/image/client-6.png" alt="Client logo 6"></div>
-                    <div class="logo-item"><img src="/mono-tech-html/image/client-7.png" alt="Client logo 7"></div>
-                    <div class="logo-item"><img src="/mono-tech-html/image/client-8.png" alt="Client logo 7"></div>
+                    <div class="logo-item">
+                        <img src="{{ asset('assets/product/image/client-1.png') }}" alt="Client logo 1">
+                    </div>
+                    <div class="logo-item">
+                        <img src="{{ asset('assets/product/image/client-2.png') }}" alt="Client logo 2">
+                    </div>
+                    <div class="logo-item">
+                        <img src="{{ asset('assets/product/image/client-3.png') }}" alt="Client logo 3">
+                    </div>
+                    <div class="logo-item">
+                        <img src="{{ asset('assets/product/image/client-4.png') }}" alt="Client logo 4">
+                    </div>
+                    <div class="logo-item">
+                        <img src="{{ asset('assets/product/image/client-5.png') }}" alt="Client logo 5">
+                    </div>
+                    <div class="logo-item">
+                        <img src="{{ asset('assets/product/image/client-6.png') }}" alt="Client logo 6">
+                    </div>
+                    <div class="logo-item">
+                        <img src="{{ asset('assets/product/image/client-7.png') }}" alt="Client logo 7">
+                    </div>
+                    <div class="logo-item">
+                        <img src="{{ asset('assets/product/image/client-8.png') }}" alt="Client logo 7">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
     <section id="other-products" class="other-products-section">
         <div class="container">
             <div class="other-products-callout">
-                <h2 class="section-title" style="text-align:center;">Other Products</h2>
+                <h2 class="section-title text-white" style="text-align:center;">Other Products</h2>
                 <p class="section-subtitle">Explore our wide range of innovative products and customized solutions
                     designed to meet diverse industrial needs with reliability and efficiency.</p>
             </div>
             <div class="other-products-grid">
                 <article class="other-product-card">
-                    <img src="/mono-tech-html/image/1e6e1e20b5101d52600edb6d2262cafe7aac90f9.png" alt="Sheet Straightening Machine"
-                        class="product-image">
+                    <img src="{{ asset('assets/product/image/1e6e1e20b5101d52600edb6d2262cafe7aac90f9.png') }}"
+                        alt="Sheet Straightening Machine" class="product-image">
                     <h3>Sheet Straightening Machine</h3>
                     <a href="#" class="product-arrow">view</a>
                 </article>
                 <article class="other-product-card">
-                    <img src="/mono-tech-html/image/1e6e1e20b5101d52600edb6d2262cafe7aac90f9.png" alt="Sheet Straightening Machine"
-                        class="product-image">
+                    <img src="{{ asset('assets/product/image/1e6e1e20b5101d52600edb6d2262cafe7aac90f9.png') }}"
+                        alt="Sheet Straightening Machine" class="product-image">
                     <h3>Sheet Straightening Machine</h3>
                     <a href="#" class="product-arrow">view</a>
                 </article>
                 <article class="other-product-card">
-                    <img src="/mono-tech-html/image/1e6e1e20b5101d52600edb6d2262cafe7aac90f9.png" alt="Sheet Straightening Machine"
-                        class="product-image">
+                    <img src="{{ asset('assets/product/image/1e6e1e20b5101d52600edb6d2262cafe7aac90f9.png') }}"
+                        alt="Sheet Straightening Machine" class="product-image">
                     <h3>Sheet Straightening Machine</h3>
                     <a href="#" class="product-arrow">view</a>
                 </article>
                 <article class="other-product-card">
-                    <img src="/mono-tech-html/image/1e6e1e20b5101d52600edb6d2262cafe7aac90f9.png" alt="Sheet Straightening Machine"
-                        class="product-image">
+                    <img src="{{ asset('assets/product/image/1e6e1e20b5101d52600edb6d2262cafe7aac90f9.png') }}"
+                        alt="Sheet Straightening Machine" class="product-image">
                     <h3>Sheet Straightening Machine</h3>
                     <a href="#" class="product-arrow">view</a>
                 </article>
                 <article class="other-product-card">
-                    <img src="/mono-tech-html/image/1e6e1e20b5101d52600edb6d2262cafe7aac90f9.png" alt="Sheet Straightening Machine"
-                        class="product-image">
+                    <img src="{{ asset('assets/product/image/1e6e1e20b5101d52600edb6d2262cafe7aac90f9.png') }}"
+                        alt="Sheet Straightening Machine" class="product-image">
                     <h3>Sheet Straightening Machine</h3>
                     <a href="#" class="product-arrow">view</a>
                 </article>
             </div>
         </div>
     </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="model360viewer" tabindex="-1" role="dialog" aria-labelledby="model360viewer"
+        aria-hidden="true" style="z-index: 9999;padding:0px;">
+        <div class="modal-dialog model-centered" style="margin:0px;min-width:100%;min-height:98vh;" role="document">
+
+            <div class="modal-content m-2" style="height: 97vh;">
+                <span class="close" data-dismiss="modal" aria-label="Close" style="z-index: 9999"
+                    onclick="$(this).closest('.modal').modal('hide')">X</span>
+                <div class="modal-body p-4" style="height: 98vh;overflow: hidden;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        new Typed('#typed', {
+            strings: ['Experience Precision Straightening with Monotech',
+                'Experience Precision Straightening with Monotech'
+            ],
+            typeSpeed: 50,
+            delaySpeed: 10,
+            loop: true,
+        });
+
+        function model3dViewer(imageUrl) {
+            $('#model360viewer .modal-body').html(`
+                <model-viewer src="` + imageUrl + `" camera-controls auto-rotate
+                    style="width: 100%; height: 98vh;">
+                </model-viewer>
+            `);
+            $('#model360viewer').modal('show')
+        }
+    </script>
     <footer id="footer" class="site-footer-wrapper">
         <div class="container footer-container">
             <div class="footer-col footer-about">
